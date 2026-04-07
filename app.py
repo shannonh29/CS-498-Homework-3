@@ -1,8 +1,9 @@
 from flask import Flask, request, jsonify
 from pymongo import MongoClient, ReadPreference
 from pymongo.write_concern import WriteConcern
+import os
 
-MONGO_URI = "mongodb+srv://shurd2_db_user:RpEkdmcLeopyCGwc@cluster0.79zebxx.mongodb.net/?retryWrites=true&w=majority"
+MONGO_URI = os.getenv("MONGO_URI")
 DB_NAME = "ev_db"
 COLLECTION_NAME = "vehicles"
 
